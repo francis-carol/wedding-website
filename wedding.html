@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reena & Carol's Wedding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #fdf3e6;
+            color: #333;
+        }
+        header {
+            background: #e9c46a;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        .countdown {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        .event-details {
+            margin: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .event-details h2 {
+            color: #d62828;
+        }
+        footer {
+            background: #e76f51;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function countdown() {
+            const weddingDate = new Date("January 31, 2025 10:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days} Days : ${hours} Hours : ${minutes} Minutes : ${seconds} Seconds`;
+
+            if (diff < 0) {
+                document.getElementById("countdown").innerHTML = "The big day is here!";
+            }
+        }
+
+        setInterval(countdown, 1000);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Reena & Carol's Wedding</h1>
+        <p>We can't wait to celebrate with you!</p>
+    </header>
+
+    <div class="countdown">
+        <h2>Countdown to the Wedding:</h2>
+        <p id="countdown"></p>
+    </div>
+
+    <div class="event-details">
+        <h2>Event Details</h2>
+        <p><strong>Wedding Ceremony:</strong><br>
+        Friday, 31st January 2025, 10:00 AM<br>
+        Risen Christ Church, No.6, Paper Mills Road, Peravallur, Chennai - 600 082.</p>
+
+        <p><strong>Reception:</strong><br>
+        11:30 AM<br>
+        O.S. Mahal (Opposite Risen Christ Church).</p>
+
+        <p><strong>Engagement:</strong><br>
+        Thursday, 30th January 2025, 6:00 PM<br>
+        O.S. Mahal, Chennai - 600 082.</p>
+    </div>
+
+    <footer>
+        <p>With love, Reena & Carol</p>
+    </footer>
+</body>
+</html>
+
